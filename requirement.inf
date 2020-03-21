@@ -1,0 +1,14 @@
+{
+  "module_name":"FFmpeg Factory",
+  "type":"multimedia",
+  "author":"aroz-online",
+  "last-update":"21/3/2020",
+  "contact":"https://github.com/aroz-online",
+  "minium_version":0,
+  "os":{
+    "windows":true,
+    "linux":true
+  },
+  "require_package":["ffmpeg"],
+  "permission":0775
+}
