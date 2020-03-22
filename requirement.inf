@@ -2,13 +2,23 @@
   "module_name":"FFmpeg Factory",
   "type":"multimedia",
   "author":"aroz-online",
-  "last-update":"21/3/2020",
+  "last-update":"20200321 00:00:00HKT",
   "contact":"https://github.com/aroz-online",
+  "eula":"https://github.com/ffmpeg/license.txt"
   "minium_version":0,
+  "mimium_os":"20180101",
   "os":{
     "windows":true,
-    "linux":true
+    "debian":true
   },
-  "require_package":["ffmpeg"],
-  "permission":0775
+  "arch":{
+    "x86":true,
+    "x64":true,
+    "armv7l":true
+  }
+  "required_package":[["name":"ffmpeg","symbol":">=","version":"7.1"],
+  "required_webapp":["SystemAOB"],
+  "permission":["com.imuslab.storage.read","com.imuslab.storage.write"],
+  "permission":0775,
+  "file_checksum":[]
 }
