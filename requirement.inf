@@ -14,7 +14,8 @@
   "arch":{
     "x86":true,
     "x64":true,
-    "armv7l":true
+    "armv6l":true,
+    "arm64":true
   }
   "required_package":[["name":"ffmpeg","symbol":">=","version":"7.1"],
   "required_webapp":["SystemAOB"],
