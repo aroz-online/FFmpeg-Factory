@@ -6,7 +6,7 @@ The FFmpeg GUI for the ArOZ Online System
 The installation instruction below assume you have already got [ArOZ Online System](https://github.com/tobychui/ArOZ-Online-System) installed.
 
 ## Demo 
-See the system demo in this ![Youtube Video](https://www.youtube.com/watch?v=eCKVFfYGJfs&feature=youtu.be) 
+See the system demo in this [Youtube Video](https://www.youtube.com/watch?v=eCKVFfYGJfs&feature=youtu.be) 
 
 ### Manual Installation
 1. Install ffmpeg via the command ```sudo apt-get install ffmpeg```. On older version of Debian, you might use libav instead of ffmpeg.
