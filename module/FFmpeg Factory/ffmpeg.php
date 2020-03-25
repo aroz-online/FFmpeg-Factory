@@ -34,7 +34,7 @@ function buildBashFile($command){
 	if (strpos($osname,"Ubuntu") !== false){
 	    //Ubuntu
 	    $content = $content ."ffmpeg" . " " . trim($command) . " > /dev/null 2>log/" . $timestamp . ".log &" . PHP_EOL;
-	}else if(strpos($osname,"Debian") !== false && strpos($osRelease,"10") !== false){
+	}else if(strpos($osname,"Debian") !== false && (strpos($osRelease,"10") !== false || strpos($osRelease,"9.9") !== false)){
 	    //Debian 10, which use ffmpeg instead of avconv lib
 	    $content = $content ."ffmpeg" . " " . trim($command) . " > /dev/null 2>log/" . $timestamp . ".log &" . PHP_EOL;
 	}else if(strpos($osname,"Raspbian") !== false && strpos($osRelease,"10") !== false){
@@ -151,7 +151,7 @@ if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
 	//Running on Linux Hosts
 	$filename = buildBashFile($command);
 	$filepath = realpath("tmp/" . $filename . ".sh");
-	shell_exec('sudo bash "' . $filepath . '"'); 
+	shell_exec('bash "' . $filepath . '"'); 
 	sleep(1);
 	echo ("DONE," . $filename);
 }

@@ -39,6 +39,12 @@ if (strpos($dragInFilepath, "extDiskAccess.php?file=") !== false){
         padding-top:0px !important;
         background-color:white;
     }
+    @supports (backdrop-filter: none) {
+		body {
+			background: rgba(255, 255, 255, 0.9);
+			backdrop-filter: blur(8px);
+		}
+	}
     .topMenu{
         padding-top:0px !important; 
         border-bottom: 1px solid #999999;
@@ -795,6 +801,17 @@ function viewCommand(){
     });    
 }
 
+function base64encode(str) {
+  let encode = encodeURIComponent(str).replace(/%([a-f0-9]{2})/gi, (m, $1) => String.fromCharCode(parseInt($1, 16)))
+  return btoa(encode)
+}
+
+function base64decode(str) {
+  let decode = atob(str).replace(/[\x80-\uffff]/g, (m) => `%${m.charCodeAt(0).toString(16).padStart(2, '0')}`)
+  return decodeURIComponent(decode)
+}
+
+
 function generateFileListFromFileDataObject(fileData){
     result = JSON.parse(fileData);
     for (var i=0; i < result.length; i++){
@@ -814,7 +831,8 @@ function generateFileListFromFileDataObject(fileData){
         }
         command = fillInformation(command,"filepath",relativeFilepath);
         command = fillInformation(command,"filename",relativeFilepath.replace("." + ext,""));
-        box = fillInformation(box,"COMMAND",btoa(command))
+        //console.log(base64encode(command));
+        box = fillInformation(box,"COMMAND",base64encode(command))
         box = fillInformation(box,"CONVERSIONTYPE",ext + " >> " + convertionTarget.toLowerCase());
         $("#convertPendingList").append($(box));
         checkIfConversionMakeSense(ext,convertionTarget,result[i].filepath);
