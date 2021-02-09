@@ -2,6 +2,9 @@
 # FFmpeg-Factory
 The FFmpeg GUI for the ArOZ Online System
 
+## DEPRECATED
+This module is no longer usable in the latest [ArozOS 1.0](https://github.com/tobychui/arozos) Builds. The FFmpeg Factory has been included in the offical build of ArozOS 1.0. Hence, this repo is archived and no further development will be done to this version of FFMpeg Factory.
+
 ## Installation
 The installation instruction below assume you have already got [ArOZ Online System](https://github.com/tobychui/ArOZ-Online-System) installed.
 
